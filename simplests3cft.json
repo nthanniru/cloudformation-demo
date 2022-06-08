@@ -36,9 +36,7 @@
                 "Ref": "S3Bucket"
             },
             "Description": "Name of the sample Amazon S3 bucket."
-        }
-    },
-    "EC2Outputs": {
+        },
         "InstanceName": {
             "Value": {
                 "Ref": "MyEC2Instance"
