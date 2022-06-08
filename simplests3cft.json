@@ -13,7 +13,21 @@
                 "ImageId": "ami-0022f774911c1d690",
                 "KeyName": "devops",
                 "InstanceType": "t2.micro"
-            }
+            },
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "TestServer"
+                },
+                {
+                    "Key": "Pmgmt",
+                    "Value": "24X7"
+                },
+                {
+                    "Key": "AppName",
+                    "Value": "Pega"
+                }
+            ]
         }
     },
     "Outputs": {
