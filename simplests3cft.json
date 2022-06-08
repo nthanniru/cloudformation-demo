@@ -12,23 +12,7 @@
         "Type" : "AWS::EC2::Instance",
         "Properties" : {
            "ImageId" : "ami-0022f774911c1d690",
-           "KeyName" : "devops",
-           "BlockDeviceMappings" : [
-              {
-                 "DeviceName" : "/dev/sdm",
-                 "Ebs" : {
-                   "VolumeType" : "io1",
-                   "Iops" : "200",
-                   "DeleteOnTermination" : "false",
-                   "VolumeSize" : "20"
-                 }
-               }, 
-               {
-                 "DeviceName" : "/dev/sdk",
-                 "NoDevice" : {}
-               }
-           ]
-        }
+           "KeyName" : "devops"
      },
     "Outputs": {
         "BucketName": {
