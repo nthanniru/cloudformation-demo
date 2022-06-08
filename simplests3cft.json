@@ -8,12 +8,42 @@
               }
         }
     },
+    "MyEC2Instance" : {
+        "Type" : "AWS::EC2::Instance",
+        "Properties" : {
+           "ImageId" : "ami-0022f774911c1d690",
+           "KeyName" : "devops",
+           "BlockDeviceMappings" : [
+              {
+                 "DeviceName" : "/dev/sdm",
+                 "Ebs" : {
+                   "VolumeType" : "io1",
+                   "Iops" : "200",
+                   "DeleteOnTermination" : "false",
+                   "VolumeSize" : "20"
+                 }
+               }, 
+               {
+                 "DeviceName" : "/dev/sdk",
+                 "NoDevice" : {}
+               }
+           ]
+        }
+     },
     "Outputs": {
         "BucketName": {
             "Value": {
                 "Ref": "S3Bucket"
             },
             "Description": "Name of the sample Amazon S3 bucket."
+        }
+    },
+    "EC2Outputs": {
+        "InstanceName": {
+            "Value": {
+                "Ref": "MyEC2Instance"
+            },
+            "Description": "Name of the sample Amazon EC2 Machine."
         }
     }
 }
