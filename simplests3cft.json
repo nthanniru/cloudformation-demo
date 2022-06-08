@@ -1,27 +1,27 @@
 {
-	"AWSTemplateFormatVersion": "2010-09-09",
-	"Resources": {
-		"S3Bucket": {
-			"Type": "AWS::S3::Bucket",
-			"Properties": {
-				"BucketName": "i-named-this-bucket1991"
-			}
-		}
-	},
-	"MyEC2Instance": {
-		"Type": "AWS::EC2::Instance",
-		"Properties": {
-			"ImageId": "ami-0022f774911c1d690",
-			"KeyName": "devops",
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Resources": {
+        "S3Bucket": {
+            "Type": "AWS::S3::Bucket",
+            "Properties": {
+                "BucketName": "i-named-this-bucket1991"
+            }
+        }
+    },
+    "MyEC2Instance": {
+        "Type": "AWS::EC2::Instance",
+        "Properties": {
+            "ImageId": "ami-0022f774911c1d690",
+            "KeyName": "devops",
             "InstanceType": "t2.micro"
-		},
-		"Outputs": {
-			"BucketName": {
-				"Value": {
-					"Ref": "S3Bucket"
-				},
-				"Description": "Name of the sample Amazon S3 bucket."
-			}
-		}
-	}
+        }
+    },
+    "Outputs": {
+        "BucketName": {
+            "Value": {
+                "Ref": "S3Bucket"
+            },
+            "Description": "Name of the sample Amazon S3 bucket."
+        }
+    }
 }
