@@ -34,8 +34,7 @@
                     }
                 ]
             }
-            
-            }
+        }
     },
     "Outputs": {
         "BucketName": {
@@ -43,23 +42,6 @@
                 "Ref": "S3Bucket"
             },
             "Description": "Name of the sample Amazon S3 bucket."
-        }
-    }
-}
-
-
-
-{
-    "Resources": {
-        
-        "Ec2Instance": {
-            "Type": "AWS::EC2::Instance",
-            "Properties": {
-                "ImageId": "ami-02b92c281a4d3dc79",
-                "KeyName": {
-                    "Ref": "NewKeyPair"
-                }
-            }
         }
     }
 }
