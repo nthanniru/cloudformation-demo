@@ -11,7 +11,7 @@
             "Type": "AWS::EC2::Instance",
             "Properties": {
                 "ImageId": "ami-0022f774911c1d690",
-                "KeyName": "devops1",
+                "KeyName": "test",
                 "InstanceType": "t2.micro",
                 "Tags": [
                     {
