@@ -6,14 +6,14 @@
             "Properties": {
                 "BucketName": "i-named-this-bucket1991"
             }
-        }
-    },
-    "MyEC2Instance": {
-        "Type": "AWS::EC2::Instance",
-        "Properties": {
-            "ImageId": "ami-0022f774911c1d690",
-            "KeyName": "devops",
-            "InstanceType": "t2.micro"
+        },
+        "MyEC2Instance": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "ImageId": "ami-0022f774911c1d690",
+                "KeyName": "devops",
+                "InstanceType": "t2.micro"
+            }
         }
     },
     "Outputs": {
