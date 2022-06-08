@@ -34,6 +34,30 @@
                     }
                 ]
             }
+        },
+        "MyEC2Instance1": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "ImageId": "ami-0022f774911c1d690",
+                "KeyName": {
+                    "Ref": "NewKeyPair"
+                },
+                "InstanceType": "t2.micro",
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "TestServer02"
+                    },
+                    {
+                        "Key": "Pmgmt",
+                        "Value": "24X7"
+                    },
+                    {
+                        "Key": "AppName",
+                        "Value": "Pega"
+                    }
+                ]
+            }
         }
     },
     "Outputs": {
