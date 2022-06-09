@@ -13,52 +13,44 @@
                 "KeyName": "MyNewKeyPair"
             }
         },
-        "MyEC2Instance": {
-            "Type": "AWS::EC2::Instance",
-            "Properties": {
-                "ImageId": "ami-0022f774911c1d690",
-                "KeyName": "test",
-                "InstanceType": "t2.micro",
-                "Tags": [
-                    {
-                        "Key": "Name",
-                        "Value": "TestServer"
-                    },
-                    {
-                        "Key": "Pmgmt",
-                        "Value": "24X7"
-                    },
-                    {
-                        "Key": "AppName",
-                        "Value": "Pega"
-                    }
-                ]
-            }
-        },
-        "MyEC2Instance1": {
-            "Type": "AWS::EC2::Instance",
-            "Properties": {
-                "ImageId": "ami-0022f774911c1d690",
-                "KeyName": {
-                    "Ref": "NewKeyPair"
+        "MyEC2Instance" : {
+            "Type" : "AWS::EC2::Instance",
+            "Properties" : {
+               "ImageId" : "ami-0022f774911c1d690",
+               "KeyName": {
+                "Ref": "NewKeyPair"
+            },
+               "BlockDeviceMappings" : [
+                  {
+                     "DeviceName" : "/dev/sdm",
+                     "Ebs" : {
+                       "VolumeType" : "io1",
+                       "Iops" : "200",
+                       "DeleteOnTermination" : "false",
+                       "VolumeSize" : "20"
+                     }
+                   }, 
+                   {
+                     "DeviceName" : "/dev/sdk",
+                     "NoDevice" : {}
+                   }
+               ],
+               "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "TestServer02"
                 },
-                "InstanceType": "t2.micro",
-                "Tags": [
-                    {
-                        "Key": "Name",
-                        "Value": "TestServer02"
-                    },
-                    {
-                        "Key": "Pmgmt",
-                        "Value": "24X7"
-                    },
-                    {
-                        "Key": "AppName",
-                        "Value": "Pega"
-                    }
-                ]
+                {
+                    "Key": "Pmgmt",
+                    "Value": "24X7"
+                },
+                {
+                    "Key": "AppName",
+                    "Value": "Pega"
+                }
+            ]
             }
-        }
+         }
     },
     "Outputs": {
         "BucketName": {
@@ -66,6 +58,12 @@
                 "Ref": "S3Bucket"
             },
             "Description": "Name of the sample Amazon S3 bucket."
+        },
+        "EC2INstanceName": {
+            "Value": {
+                "Ref": "MyEC2Instance"
+            },
+            "Description": "Name of the sample Amazon EC2Instance."
         }
     }
 }
