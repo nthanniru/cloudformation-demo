@@ -50,9 +50,8 @@
                         "Value": "Pega"
                     }
                 ],
-                "SecurityGroups": {
-                    "Ref": "InstanceSecurityGroup"
-                }
+
+                "SecurityGroups" : [{ "Ref" : "InstanceSecurityGroup" }]
             }
         },
         "InstanceSecurityGroup": {
