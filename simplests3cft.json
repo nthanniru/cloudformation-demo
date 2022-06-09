@@ -51,7 +51,7 @@
                     }
                 ],
                 "SecurityGroups": {
-                    "Ref": "InstanceSecurityGroup.id"
+                    "Ref": "InstanceSecurityGroup"
                 }
             }
         },
