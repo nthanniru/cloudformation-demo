@@ -28,7 +28,21 @@
                             "VolumeType": "io1",
                             "Iops": "200",
                             "DeleteOnTermination": "true",
-                            "VolumeSize": "8"
+                            "VolumeSize": "8",
+                            "Tags": [
+                                {
+                                    "Key": "Name",
+                                    "Value": "DefaultVolume"
+                                },
+                                {
+                                    "Key": "AvoidCleanUp",
+                                    "Value": "false"
+                                },
+                                {
+                                    "Key": "AppName",
+                                    "Value": "Pega"
+                                }
+                            ]
                         }
                     },
                     {
