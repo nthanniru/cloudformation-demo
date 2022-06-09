@@ -49,9 +49,7 @@
                         "Key": "AppName",
                         "Value": "Pega"
                     }
-                ],
-
-                "SecurityGroups" : [{ "Ref" : "InstanceSecurityGroup" }]
+                ]
             }
         },
         "InstanceSecurityGroup": {
