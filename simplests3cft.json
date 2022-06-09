@@ -13,44 +13,44 @@
                 "KeyName": "MyNewKeyPair"
             }
         },
-        "MyEC2Instance" : {
-            "Type" : "AWS::EC2::Instance",
-            "Properties" : {
-               "ImageId" : "ami-0022f774911c1d690",
-               "KeyName": {
-                "Ref": "NewKeyPair"
-            },
-               "BlockDeviceMappings" : [
-                  {
-                     "DeviceName" : "/dev/sdm",
-                     "Ebs" : {
-                       "VolumeType" : "io1",
-                       "Iops" : "200",
-                       "DeleteOnTermination" : "false",
-                       "VolumeSize" : "20"
-                     }
-                   }, 
-                   {
-                     "DeviceName" : "/dev/sdk",
-                     "NoDevice" : {}
-                   }
-               ],
-               "Tags": [
-                {
-                    "Key": "Name",
-                    "Value": "TestServer02"
+        "MyEC2Instance": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "ImageId": "ami-0022f774911c1d690",
+                "KeyName": {
+                    "Ref": "NewKeyPair"
                 },
-                {
-                    "Key": "Pmgmt",
-                    "Value": "24X7"
-                },
-                {
-                    "Key": "AppName",
-                    "Value": "Pega"
-                }
-            ]
+                "BlockDeviceMappings": [
+                    {
+                        "DeviceName": "/dev/sdm",
+                        "Ebs": {
+                            "VolumeType": "io1",
+                            "Iops": "200",
+                            "DeleteOnTermination": "false",
+                            "VolumeSize": "20"
+                        }
+                    },
+                    {
+                        "DeviceName": "/dev/sdk",
+                        "NoDevice": {}
+                    }
+                ],
+                "Tags": [
+                    {
+                        "Key": "Name",
+                        "Value": "TestServer02"
+                    },
+                    {
+                        "Key": "Pmgmt",
+                        "Value": "24X7"
+                    },
+                    {
+                        "Key": "AppName",
+                        "Value": "Pega"
+                    }
+                ]
             }
-         }
+        }
     },
     "Outputs": {
         "BucketName": {
