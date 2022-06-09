@@ -23,12 +23,12 @@
                 },
                 "BlockDeviceMappings": [
                     {
-                        "DeviceName": "/dev/sdm",
+                        "DeviceName": "/dev/xvda",
                         "Ebs": {
                             "VolumeType": "io1",
                             "Iops": "200",
-                            "DeleteOnTermination": "false",
-                            "VolumeSize": "20"
+                            "DeleteOnTermination": "true",
+                            "VolumeSize": "8"
                         }
                     },
                     {
@@ -50,27 +50,32 @@
                         "Value": "Pega"
                     }
                 ],
-                "SecurityGroupIds" : {"Ref": "InstanceSecurityGroup"}
-                               
+                "SecurityGroups": {
+                    "Ref": "InstanceSecurityGroup.id"
+                }
             }
         },
-        "InstanceSecurityGroup" : {
-            "Type" : "AWS::EC2::SecurityGroup",
-            "Properties" : {
-                "GroupDescription" : "Allow http to client host",
-                "VpcId" : "vpc-a4f4ddde",
-                "SecurityGroupIngress" : [{
-                    "IpProtocol" : "tcp",
-                    "FromPort" : 22,
-                    "ToPort" : 22,
-                    "CidrIp" : "0.0.0.0/0"
-                }],
-                "SecurityGroupEgress" : [{
-                    "IpProtocol" : "tcp",
-                    "FromPort" : 80,
-                    "ToPort" : 80,
-                    "CidrIp" : "0.0.0.0/0"
-                }]
+        "InstanceSecurityGroup": {
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+                "GroupDescription": "Allow http to client host",
+                "VpcId": "vpc-a4f4ddde",
+                "SecurityGroupIngress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 22,
+                        "ToPort": 22,
+                        "CidrIp": "0.0.0.0/0"
+                    }
+                ],
+                "SecurityGroupEgress": [
+                    {
+                        "IpProtocol": "tcp",
+                        "FromPort": 80,
+                        "ToPort": 80,
+                        "CidrIp": "0.0.0.0/0"
+                    }
+                ]
             }
         }
     },
