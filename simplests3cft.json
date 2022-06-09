@@ -30,21 +30,6 @@
                             "DeleteOnTermination": "true",
                             "VolumeSize": "8"
                         }
-                        ,
-                            "Tags": [
-                                {
-                                    "Key": "Name",
-                                    "Value": "DefaultVolume"
-                                },
-                                {
-                                    "Key": "AvoidCleanUp",
-                                    "Value": "false"
-                                },
-                                {
-                                    "Key": "AppName",
-                                    "Value": "Pega"
-                                }
-                            ]
                     },
                     {
                         "DeviceName": "/dev/sdk",
@@ -63,6 +48,10 @@
                     {
                         "Key": "AppName",
                         "Value": "Pega"
+                    },
+                    {
+                        "Key": "TestTag",
+                        "Value": "Naresh_Tg"
                     }
                 ]
             }
