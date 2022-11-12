@@ -9,6 +9,8 @@ pipeline {
                  is a
                  multi-ine comment */
             // this is a single line comment
+                git clone https://github.com/nthanniru/kubernetes-examples.git
+
             
               }
              }
